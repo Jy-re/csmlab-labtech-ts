@@ -320,9 +320,10 @@ a{
 }
 
 /* Hide scrollbar thumb in Edge (Legacy) */
-::-webkit-scrollbar {
+.transactionViewContainer::-webkit-scrollbar {
   display: none;
 }
+
 .transactionView-title{
   font-size: 24px;
  
@@ -1291,6 +1292,10 @@ input, select{
 
 .tableContainer{
   overflow-x: auto;
+}
+
+table{
+  overflow-x: visible;
 }
 
 .addBtnContainer{
