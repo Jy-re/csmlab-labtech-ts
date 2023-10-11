@@ -63,7 +63,7 @@ function Miscellaneous() {
 
       {/* Floor Inventory Label */}
       <div className="flrInventoryLabelContainer">
-        <div className="flrInventoryLabel">{selectedFloor} Glassware</div>
+        <div className="flrInventoryLabel">{selectedFloor} Miscellaneous</div>
       </div>
 
       <div className="btnsearchContainer">

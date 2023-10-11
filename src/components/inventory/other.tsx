@@ -63,7 +63,7 @@ function Other() {
 
       {/* Floor Inventory Label */}
       <div className="flrInventoryLabelContainer">
-        <div className="flrInventoryLabel">{selectedFloor} Glassware</div>
+        <div className="flrInventoryLabel">{selectedFloor} Other Items</div>
       </div>
 
       <div className="btnsearchContainer">
