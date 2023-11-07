@@ -28,7 +28,7 @@ function breakagePending() {
               <div
               className="selectedStatusTitle"> Replacement Requests </div>
               {pendingItems.map((item) => (
-             
+               <Link to={`/breakage/pending/view/${item.id}`}>
                 <div className='transactionContainer'>
                   <div className='transactionFirstRow'>
                     <div>Transaction ID #{item.id} </div>
@@ -49,13 +49,14 @@ function breakagePending() {
                     </div>
 
                   </div>
-                  <Link to={`/breakage/pending/view/${item.id}`}>
+                 
                     <div className='transactionThirdRow'>
                       Tap to View
 
                     </div>
-                </Link>
+               
                 </div>
+              </Link>
               
               ))}
             </div>

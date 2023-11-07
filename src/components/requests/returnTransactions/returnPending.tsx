@@ -26,7 +26,7 @@ function ReturningPending() {
     <div
     className="selectedStatusTitle">Pending Approve</div>
     {pendingItems.map((item) => (
-   
+     <Link to={`/returning/pending/view/${item.id}`}>
       <div className='transactionContainer'>
         <div className='transactionFirstRow'>
           <div>Transaction ID #{item.id} </div>
@@ -47,12 +47,13 @@ function ReturningPending() {
           </div>
 
         </div>
-        <Link to={`/returning/pending/view/${item.id}`}>
+        
           <div className='transactionThirdRow'>
             Tap to View
           </div>
-      </Link>
+      
       </div>
+     </Link>
     
     ))}
   </div>

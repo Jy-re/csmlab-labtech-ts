@@ -25,7 +25,7 @@ function breakageList() {
     <div
     className="selectedStatusTitle">Breakage List </div>
     {breakageItems.map((item) => (
-   
+    <Link to={`/breakage/list/view/${item.id}`}>
       <div className='transactionContainer'>
         <div className='transactionFirstRow'>
           <div>Transaction ID #{item.id} </div>
@@ -46,13 +46,14 @@ function breakageList() {
           </div>
 
         </div>
-        <Link to={`/breakage/list/view/${item.id}`}>
+        
           <div className='transactionThirdRow'>
             Tap to View
 
           </div>
-      </Link>
+     
       </div>
+    </Link>
     
     ))}
   </div>
