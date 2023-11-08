@@ -191,9 +191,7 @@ function BreakagePendingView() {
              
 
               <div className='darabyue'>
-                  <Link to = '/borrowing' className='viewButtonReject'>
-                      Reject
-                  </Link>
+                  
                   <Link to= "/breakage/replaced" className='viewButtonAccept'>
                       Approve
                   </Link>
