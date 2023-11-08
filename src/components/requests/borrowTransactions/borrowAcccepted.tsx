@@ -29,7 +29,7 @@ function Accepted() {
               <div
               className="selectedStatusTitle"> Accepted / Approve </div>
               {acceptedItems.map((item) => (
-             
+               <Link to={`/borrowing/accepted/view/${item.id}`}>
                 <div className='transactionContainer'>
                   <div className='transactionFirstRow'>
                     <div>Transaction ID #{item.id} </div>
@@ -50,13 +50,14 @@ function Accepted() {
                     </div>
 
                   </div>
-                    <Link to={`/borrowing/accepted/view/${item.id}`}>
+                    
                           <div className='transactionThirdRow'>
                             Tap to View
 
                           </div>
-                      </Link>
+                     
                 </div>
+              </Link>
               
               ))}
             </div>
