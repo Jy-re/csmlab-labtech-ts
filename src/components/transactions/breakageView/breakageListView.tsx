@@ -104,7 +104,7 @@ function BreakageListView() {
               
           <div className='transaction-header'>
               <div className='transaction-header-status-breakage'>
-              Status: <span className='bold-header-status-breakage'>{item.status}</span>
+              Status: <span>{item.status}</span>
               </div>
 
               <div className='transaction-view-note'>

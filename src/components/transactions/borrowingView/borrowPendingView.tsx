@@ -117,7 +117,7 @@ function BorrowPendingView() {
               
           <div className='transaction-header'>
               <div className='transaction-header-status-pending'>
-              Status: <span className='bold-header-status-pending'>{item.status}</span>
+              Status: <span>{item.status}</span>
               </div>
 
               <div className='transaction-view-note'>
@@ -209,7 +209,7 @@ function BorrowPendingView() {
 
             
               <div className='darabyue'>
-                  <Link to = '/borrowing' className='viewButtonReject'>
+                  <Link to = '/borrowing/rejected' className='viewButtonReject'>
                       Reject
                   </Link>
                   <Link to= "/borrowing/accepted" className='viewButtonAccept'>
