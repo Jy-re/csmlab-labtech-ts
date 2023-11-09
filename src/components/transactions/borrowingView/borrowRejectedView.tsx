@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-
-
-import {CgProfile} from 'react-icons/cg';
+import {CgProfile} from 'react-icons/cg'
 import { Link } from 'react-router-dom';
 
-import {RxDotFilled} from 'react-icons/rx';
 
-import {GoArrowLeft} from 'react-icons/go';
-function BreakagePendingView() {
+
+import {GoArrowLeft} from 'react-icons/go'
+function BorrowRejectedView() {
   const [selectedStatus, setSelectedStatus] = useState('');
 
 
@@ -21,17 +19,28 @@ function BreakagePendingView() {
       id: 1034,
       date: 'August 19, 2023',
       time: '9:00am',
-      status: 'Returning',
+      status: 'Rejected',
       items: 
         [
-             
-             {name: 'Petri Dishes', quantity: 3, breakage: 1},
-             {name: 'Graduated Cylinder', quantity: 6,  breakage: 3},
-             {name: 'Volumetric Flask', quantity: 2,  breakage: 1},
-       
+             {name: 'Pipettes', quantity: 1},
+             {name: 'Petri Dishes', quantity: 3},
+             {name: 'Graduated Cylinder', quantity: 2},
+             {name: 'Volumetric Flask', quantity: 2},
+             {name: 'Petri Dishes', quantity: 3},
+             {name: 'Graduated Cylinder', quantity: 2},
+             {name: 'Volumetric Flask', quantity: 2},
+             {name: 'Petri Dishes', quantity: 3},
+             {name: 'Graduated Cylinder', quantity: 2},
+             {name: 'Volumetric Flask', quantity: 2},
+             {name: 'Volumetric Flask', quantity: 2},
+             {name: 'Petri Dishes', quantity: 3},
+             {name: 'Graduated Cylinder', quantity: 2},
+             {name: 'Volumetric Flask', quantity: 2},
+             {name: 'Volumetric Flask', quantity: 2},
+             {name: 'Petri Dishes', quantity: 3},
+             {name: 'Graduated Cylinder', quantity: 2},
            
         ]
-    
 
     }
   ]
@@ -69,16 +78,15 @@ function BreakagePendingView() {
       });
     });
    
-    
- 
+
 
   return (
     <section className="content">
       <div className="titleHeader">
       <div className='arrowTitleView'>
-          <Link to ='/breakage/list'>
+          <Link to ='/borrowing/pending'>
              <GoArrowLeft className='iconLeftArrow'/>
-            </Link>
+          </Link>
           <div className='titleName'> 
           Viewing Transaction 
           </div>
@@ -90,14 +98,11 @@ function BreakagePendingView() {
           <div key={item.id}>
               
           <div className='transaction-header'>
-              <div className='transaction-header-status-pending'>
+              <div className='transaction-header-status-rejected'>
               Status: <span>{item.status}</span>
               </div>
 
-              <div className='transaction-view-note'>
-                  Note: Review the slip and the replaced equipment
-              </div>
-
+              
           </div>
 
 
@@ -161,13 +166,6 @@ function BreakagePendingView() {
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;
                                 {borrowedItems.quantity}
                             </div>
-
-                            <div className='breakageDetails'>
-                                <div className='breakageLabel'>  Broken/Missing </div>
-                                 <RxDotFilled className='iconBreakageView'/>
-                              
-                                {borrowedItems.breakage}
-                            </div>
                         </div>
                     ))}
                 </div>
@@ -188,12 +186,11 @@ function BreakagePendingView() {
 
               </div>
 
-             
-
+            
               <div className='darabyue'>
                   
-                  <Link to= "/breakage/replaced" className='viewButtonAccept'>
-                      Approve
+                  <Link to= "/borrowing/pending" className='viewButtonAccept'>
+                      Done View
                   </Link>
 
               </div>
@@ -214,4 +211,4 @@ function BreakagePendingView() {
   );
 }
 
-export default BreakagePendingView;
+export default BorrowRejectedView;

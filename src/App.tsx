@@ -9,6 +9,7 @@ import Breakage from './components/requests/breakage/breakage';
 /*tap to view*/
 import BorrowPendingView from './components/transactions/borrowingView/borrowPendingView';
 import BorrowAcceptedView from './components/transactions/borrowingView/borrowAcceptedView'
+import BorrowRejectedView from './components/transactions/borrowingView/borrowRejectedView';
 
 import ReturnPendingView from './components/transactions/returningView/returnPendingView';
 import ReturnReturnedView from './components/transactions/returningView/returnReturnedView';
@@ -57,6 +58,7 @@ function App() {
           {/* manage request views */}
           <Route path ="/borrowing/pending/view/:id" element={<BorrowPendingView/> } />
           <Route path ="/borrowing/accepted/view/:id" element={<BorrowAcceptedView/>} />
+          <Route path ="/borrowing/rejected/view/:id" element={<BorrowRejectedView/>} />
           
           <Route path ="/returning/pending/view/:id" element={<ReturnPendingView/> } />
           <Route path ="/returning/returned/view/:id" element={<ReturnReturnedView/> } />

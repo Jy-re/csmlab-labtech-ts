@@ -102,7 +102,7 @@ function BorrowAcceptedView() {
               
           <div className='transaction-header'>
               <div className='transaction-header-status'>
-              Status: <span className='bold-header-status'> {item.status}</span>
+              Status: <span> {item.status}</span>
               </div>
 
               <div className='transaction-view-note'>
@@ -195,7 +195,7 @@ function BorrowAcceptedView() {
              
 
               <div className='darabyue'>
-                  <Link to = '/borrowing' className='viewButtonReject'>
+                  <Link to = '/borrowing/rejected' className='viewButtonReject'>
                       Abort
                   </Link>
                   <Link to= "/borrowing/accepted" className='viewButtonAccept'>

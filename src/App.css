@@ -237,7 +237,7 @@ a{
 
 
 }
-.bold-header-status{
+.transaction-header-status span{
   font-size: 20px;
   font-weight: 700;
   color: #00360C;
@@ -259,12 +259,12 @@ a{
 
 
 }
-.bold-header-status-pending{
+.transaction-header-status-pending span{
   font-size: 20px;
   font-weight: 700;
   color: #D9A92E;
 }
-.transaction-header-status-breakage{
+.transaction-header-status-breakage, .transaction-header-status-rejected{
   
   margin: 10px 350px 0 350px;
 
@@ -279,7 +279,7 @@ a{
 
 
 }
-.bold-header-status-breakage{
+.transaction-header-status-rejected span, .transaction-header-status-breakage span{
   font-size: 20px;
   font-weight: 700;
   color: #360000;
@@ -539,7 +539,7 @@ total quantity */
  
   
 }
-.breakageLabel{
+.breakageLabel {
   margin-left: 70px;
   background: #FFE9E9;   
   border-radius: 10px;
@@ -548,7 +548,7 @@ total quantity */
   
  
 }
-.iconBreakageView{
+.iconBreakageView, .iconRejected{
   color: hsla(0, 100%, 11%, 1);
 
   margin-right: 20px;
@@ -1005,7 +1005,7 @@ div.selected-item{
   color:hsla(0, 97%, 45%, 1);
   margin-right: 8px;
 }
-.itemBreakageStatusText{
+.itemBreakageStatusText, .itemRejectedStatusText{
   
   font-size: 10px;
   font-weight: 600;
