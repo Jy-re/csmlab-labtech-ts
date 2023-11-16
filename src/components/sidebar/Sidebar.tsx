@@ -85,12 +85,7 @@ function Sidebar() {
               </div>
             </Link>
 
-            <Link to="/breakage/list" className={`sub-option ${subOption === 'breakage' ? 'active' : ''}`} onClick={() => handleSubOptionClick('breakage')}>
-              <div className="iconSubContainer">
-                <img src={requests} className="iconSub" alt="Breakage" />
-                Breakage
-              </div>
-            </Link>
+           
           </div>
         )}
 
@@ -109,7 +104,7 @@ function Sidebar() {
 
         {/* Sub options for inventory */}
         {(selectedOption === 'inventory' || isInventorySubMenuOpen) && (
-          <div className="sub-options">
+          <div className="sub-options2">
             <Link to="/glassware" className={`sub-option ${subOption === 'glassware' ? 'active' : ''}`} onClick={() => handleSubOptionClick('glassware')}>
               <div className="iconSubContainer">
                 <img src={requests} className="iconSub" alt="Glassware" />
