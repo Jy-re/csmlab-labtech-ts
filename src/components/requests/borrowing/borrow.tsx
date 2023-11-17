@@ -4,6 +4,7 @@ import { BsHourglassSplit } from 'react-icons/bs';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
 import { MdCancel } from 'react-icons/md';
 import TransactionItem from '../TapViewTransaction';
+import { BiSolidLike } from "react-icons/bi";
 
 function Borrowing() {
   const [selectedStatus, setSelectedStatus] = useState<string>('pending');
@@ -13,7 +14,7 @@ function Borrowing() {
       id: 1034,
       date: 'August 19, 2023',
       time: '9:00am',
-      status: 'Pending'
+      status: 'Approved'
     },
     {
       id: 1234,
@@ -25,7 +26,19 @@ function Borrowing() {
       id: 1035,
       date: 'August 19, 2023',
       time: '9:00am',
-      status: 'Approved'
+      status: 'Completed'
+    },
+    {
+      id: 1035,
+      date: 'August 19, 2023',
+      time: '9:00am',
+      status: 'Returning'
+    },
+    {
+      id: 1035,
+      date: 'August 19, 2023',
+      time: '9:00am',
+      status: 'Rejected'
     },
     {
       id: 1235,
@@ -72,10 +85,33 @@ function Borrowing() {
           onClick={() => handleStatusClick('approved')}
         >
           <div className='borrowIconContainer'>
-            <BsFillCheckCircleFill className='icon' />
+            <BiSolidLike className='icon' />
           </div>
           <div className="borrowStatusTitle">Accepted</div>
         </Link>
+
+        <Link
+          to="/borrowing/rejected"
+          className={`borrowMiniContainer ${selectedStatus === 'returning' ? 'selected-item' : ''}`}
+          onClick={() => handleStatusClick('returning')}
+        >
+          <div className='borrowIconContainer'>
+            <BsHourglassSplit className='icon' />
+          </div>
+          <div className="borrowStatusTitle">Pending Return</div>
+        </Link>
+
+        <Link
+          to="/borrowing/rejected"
+          className={`borrowMiniContainer ${selectedStatus === 'completed' ? 'selected-item' : ''}`}
+          onClick={() => handleStatusClick('completed')}
+        >
+          <div className='borrowIconContainer'>
+            <BsFillCheckCircleFill className='icon' />
+          </div>
+          <div className="borrowStatusTitle">Completed</div>
+        </Link>
+
 
         <Link
           to="/borrowing/rejected"
@@ -87,6 +123,7 @@ function Borrowing() {
           </div>
           <div className="borrowStatusTitle">Rejected</div>
         </Link>
+
       </div>
 
       <div className="selectedStatusContainer">
