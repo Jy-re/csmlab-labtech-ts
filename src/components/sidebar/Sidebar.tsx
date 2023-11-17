@@ -70,7 +70,7 @@ function Sidebar() {
         </Link>
         
         {/* Incident Report */}
-        <Link to="/incident">
+        <Link to="/incident/pending">
           <button
             className={`sideItems ${selectedOption === 'incident' ? 'selected' : ''}`}
             onClick={() => handleSideItemClick('incident')}

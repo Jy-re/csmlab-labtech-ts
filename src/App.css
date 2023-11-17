@@ -693,6 +693,8 @@ total quantity */
  
 }
 
+
+
 .selected-item{
   display: flex;
   flex-direction: column;
@@ -836,13 +838,15 @@ total quantity */
   color: hsla(43, 97%, 45%, 1)
 
 }
-.iconApproved{
+
+
+.iconApproved, .iconResolved{
   height: 14px;
   width: 14px;
   color:hsla(133, 49%, 21%, 1);
   margin-right: 8px;
 }
-.itemApprovedStatusText, .itemCompletedStatusText{
+.itemApprovedStatusText, .itemCompletedStatusText, .itemResolvedStatusText{
   color:hsla(133, 49%, 21%, 1);
   font-size: 10px;
   font-weight: 600;
@@ -1020,6 +1024,10 @@ div.selected-item{
 .icon{
   height: 80px;
   width: 80px;
+}
+
+.optionContainer{
+  overflow-y: scroll;
 }
 
 /* SELECTED VIEW BELOW */
