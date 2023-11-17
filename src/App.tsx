@@ -72,9 +72,9 @@ function App() {
           <Route path ="/returning/pending/view/:id" element={<ReturnPendingView/> } />
           <Route path ="/returning/returned/view/:id" element={<ReturnReturnedView/> } />
           
-          <Route path="/incident" element={<IncidentReport/>}/>
+          <Route path="/incident/pending" element={<IncidentReport/>} />
+          <Route path="/incident/resolved" element={<IncidentReport/>} />
 
-          
           <Route path="/inventory" element={<Glassware />} />
           <Route path="/glassware" element={<Glassware />} />
           <Route path="/miscellaneous" element={<Miscellaneous />} />
