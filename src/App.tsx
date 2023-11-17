@@ -21,6 +21,8 @@ import ReturnReturnedView from './components/transactions/returningView/returnRe
 
 import Dashboard from './components/dashboard/dashboard';
 
+import IncidentReport from './components/incident/IncidentReport';
+
 import Glassware from './components/inventory/glassware';
 import Miscellaneous from './components/inventory/miscellaneous';
 import Other from './components/inventory/other';
@@ -33,6 +35,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Im
 import BorrowAcceptedView from './components/transactions/borrowingView/borrowAcceptedView';
 import BorrowPendingView from './components/transactions/borrowingView/borrowPendingView';
 import BorrowRejectedView from './components/transactions/borrowingView/borrowRejectedView';
+
 
 
 function App() {
@@ -68,6 +71,8 @@ function App() {
 
           <Route path ="/returning/pending/view/:id" element={<ReturnPendingView/> } />
           <Route path ="/returning/returned/view/:id" element={<ReturnReturnedView/> } />
+          
+          <Route path="/incident" element={<IncidentReport/>}/>
 
           
           <Route path="/inventory" element={<Glassware />} />
