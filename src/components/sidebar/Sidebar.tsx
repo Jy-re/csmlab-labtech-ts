@@ -8,6 +8,7 @@ import group from '../../Assets/images/Group.png';
 import warning from '../../Assets/images/Warning.png';
 import help from '../../Assets/images/Lamp.png';
 import ng from '../../Assets/images/NewGenes.png';
+import breakimg from '../../Assets/images/break.svg'
 
 function Sidebar() {
   const [selectedOption, setSelectedOption] = useState<string>('');
@@ -67,32 +68,19 @@ function Sidebar() {
             Manage Request
           </button>
         </Link>
-
-        {/* Sub options for manage request */}
-        {(selectedOption === 'manage' || isManageSubMenuOpen) && (
-          <div className="sub-options">
-            <Link to="/borrowing/pending" className={`sub-option ${subOption === 'borrowing' ? 'active' : ''}`} onClick={() => handleSubOptionClick('borrowing')}>
-              <div className="iconSubContainer">
-                <img src={requests} className="iconSub" alt="Borrowing" />
-                Borrowing
-              </div>
-            </Link>
-
-            <Link to="/returning/pending" className={`sub-option ${subOption === 'returning' ? 'active' : ''}`} onClick={() => handleSubOptionClick('returning')}>
-              <div className="iconSubContainer">
-                <img src={requests} className="iconSub" alt="Returning" />
-                Returning
-              </div>
-            </Link>
-
-            <Link to="/breakage/list" className={`sub-option ${subOption === 'breakage' ? 'active' : ''}`} onClick={() => handleSubOptionClick('breakage')}>
-              <div className="iconSubContainer">
-                <img src={requests} className="iconSub" alt="Breakage" />
-                Breakage
-              </div>
-            </Link>
-          </div>
-        )}
+        
+        {/* Incident Report */}
+        <Link to="/incident">
+          <button
+            className={`sideItems ${selectedOption === 'incident' ? 'selected' : ''}`}
+            onClick={() => handleSideItemClick('incident')}
+          >
+            <div className="imageItem">
+              <img src={breakimg} className="imageFit" alt="Breakage" />
+            </div>
+            Incident(Breakage)
+          </button>
+        </Link>
 
         {/* INVENTORY */}
         <Link to="/inventory">
