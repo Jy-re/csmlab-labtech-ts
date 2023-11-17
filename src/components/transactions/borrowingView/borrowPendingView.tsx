@@ -49,8 +49,8 @@ function BorrowPendingView() {
      {
         idNumber: 201854265,
         name: 'Sofia Dara Alilin',
-        Dept: 'BSCHEMISTRY'
-        
+        Dept: 'BSCHEMISTRY',
+        Section: 'CHEM3H2'
      }   
     ]
     const membersDetails =[
@@ -113,11 +113,10 @@ function BorrowPendingView() {
 
 
         {pendingItems.map((item) => (
-          <div key={item.id}>
-              
-          <div className='transaction-header'>
+          <div key={item.id} className="transbody">
+            <div className='transaction-header'>
               <div className='transaction-header-status-pending'>
-              Status: <span>{item.status}</span>
+                Status: <span>{item.status}</span>
               </div>
 
               <div className='transaction-view-note'>
@@ -126,8 +125,6 @@ function BorrowPendingView() {
 
           </div>
 
-
-          
           <div className='transactionViewContainer'>
               {/* inside content sa white container */}
 
@@ -137,7 +134,8 @@ function BorrowPendingView() {
               </div>
 
               {/* --student items */}
-              {studentDetails.map((student) => (                   
+              {studentDetails.map((student) => (      
+                <div className="firstRow">
                   <div className='viewStudentInfo'>
                     <div className='iconProfileContainer'> 
                         <CgProfile className='iconProfile'/>
@@ -151,6 +149,10 @@ function BorrowPendingView() {
                       </div>
                     </div>
                   </div>
+                  <div className="sectionContainer">
+                    Section: <b>{student.Section}</b>
+                  </div>
+                </div>               
                   ))}   
 
               {/* --members view       */}
