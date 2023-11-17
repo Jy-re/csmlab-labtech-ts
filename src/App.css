@@ -179,10 +179,24 @@ a{
  
   display: flex;
   flex-direction: column;
+  
+  height: 130px;
+  width:255px;
+  margin-left: 43px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  
+}
+.sub-options2{
+ 
+  display: flex;
+  flex-direction: column;
+  
   height: 188px;
   width:255px;
   margin-left: 43px;
   margin-bottom: 5px;
+  margin-top: 5px;
   
 }
 .sub-option{
@@ -764,13 +778,13 @@ total quantity */
   color: hsla(43, 97%, 45%, 1)
 
 }
-.iconApprove{
+.iconApproved{
   height: 14px;
   width: 14px;
   color:hsla(133, 49%, 21%, 1);
   margin-right: 8px;
 }
-.itemApproveStatusText{
+.itemApprovedStatusText, .itemCompletedStatusText{
   color:hsla(133, 49%, 21%, 1);
   font-size: 10px;
   font-weight: 600;
@@ -1012,20 +1026,20 @@ div.selected-item{
   color: hsla(0, 97%, 45%, 1);
 
 }
-.iconPending{
+.iconPending, .iconReturning{
   height: 14px;
   width: 14px;
   color: hsla(43, 97%, 45%, 1);
   margin-right: 8px;
 }
-.itemPendingStatusText{
+.itemPendingStatusText, .itemReturningStatusText{
   
   font-size: 10px;
   font-weight: 600;
   color: hsla(43, 97%, 45%, 1)
 
 }
-.iconApprove{
+.iconApprove, .iconCompleted{
   height: 14px;
   width: 14px;
   color:hsla(133, 49%, 21%, 1);

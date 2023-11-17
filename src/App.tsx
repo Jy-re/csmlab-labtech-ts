@@ -4,18 +4,19 @@ import './App.css';
 /* manage requests*/
 import Borrowing from './components/requests/borrowing/borrow';
 import Returning from './components/requests/returning/return';
-import Breakage from './components/requests/breakage/breakage';
+
 
 /*tap to view*/
-import BorrowPendingView from './components/transactions/borrowingView/borrowPendingView';
-import BorrowAcceptedView from './components/transactions/borrowingView/borrowAcceptedView'
-import BorrowRejectedView from './components/transactions/borrowingView/borrowRejectedView';
+// import BorrowPendingView from './components/transactions/borrowingView/borrowPendingView';
+// import BorrowAcceptedView from './components/transactions/borrowingView/borrowAcceptedView'
+// import BorrowRejectedView from './components/transactions/borrowingView/borrowRejectedView';
+import BorrowTransactionView from './components/transactions/borrowingView/(trial)BorrowTransactionView';
+
+
 
 import ReturnPendingView from './components/transactions/returningView/returnPendingView';
 import ReturnReturnedView from './components/transactions/returningView/returnReturnedView';
 
-import BreakageListView from './components/transactions/breakageView/breakageListView';
-import BreakagePendingView from './components/transactions/breakageView/breakagePendingView';
 
 
 import Dashboard from './components/dashboard/dashboard';
@@ -31,6 +32,9 @@ import Login from './components/login/Login';
 import NavHeaderVisibility from './components/login/loginisolate';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import useLocation
+import BorrowAcceptedView from './components/transactions/borrowingView/borrowAcceptedView';
+import BorrowPendingView from './components/transactions/borrowingView/borrowPendingView';
+import BorrowRejectedView from './components/transactions/borrowingView/borrowRejectedView';
 
 
 
@@ -44,7 +48,7 @@ function App() {
 
          
 
-          <NavHeaderVisibility />
+        <NavHeaderVisibility />
 
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
@@ -52,22 +56,25 @@ function App() {
           <Route path="/borrowing/pending" element={<Borrowing />} />
           <Route path="/borrowing/accepted" element={<Borrowing />} />
           <Route path="/borrowing/rejected" element={<Borrowing />} />
+
           <Route path="/returning/pending" element={<Returning />} />
           <Route path="/returning/returned" element={<Returning />} />
           <Route path="/returning/pending" element={<Returning/> } />
-          <Route path="/breakage/list" element={<Breakage />} />
-          <Route path="/breakage/pending" element={<Breakage />} />
-          <Route path="/breakage/replaced" element={<Breakage/> } />
-          {/* manage request views */}
-          <Route path ="/borrowing/pending/view/:id" element={<BorrowPendingView/> } />
-          <Route path ="/borrowing/accepted/view/:id" element={<BorrowAcceptedView/>} />
-          <Route path ="/borrowing/rejected/view/:id" element={<BorrowRejectedView/>} />
+   
           
+          {/* manage request views */}
+          {/* <Route path ="/borrowing/pending/view/:id" element={< BorrowPendingView/>} />
+          <Route path ="/borrowing/approved/view/:id" element={<BorrowAcceptedView/>} />
+          <Route path ="/borrowing/rejected/view/:id" element={<BorrowRejectedView/>} /> */}
+          
+          <Route path="/borrowing/:status/view/:id" element={<BorrowTransactionView/>} />
+
           <Route path ="/returning/pending/view/:id" element={<ReturnPendingView/> } />
           <Route path ="/returning/returned/view/:id" element={<ReturnReturnedView/> } />
           
           <Route path="/incident" element={<IncidentReport/>}/>
 
+          
           <Route path="/inventory" element={<Glassware />} />
           <Route path="/glassware" element={<Glassware />} />
           <Route path="/miscellaneous" element={<Miscellaneous />} />

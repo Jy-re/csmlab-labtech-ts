@@ -1,20 +1,65 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { BsHourglassSplit } from 'react-icons/bs';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
 import { MdCancel } from 'react-icons/md';
-
-import Pending from '../borrowTransactions/borrowPending';
-import Accepted from '../borrowTransactions/borrowAcccepted';
-import Rejected from '../borrowTransactions/borrowRejected';
+import TransactionItem from '../TapViewTransaction';
+import { BiSolidLike } from "react-icons/bi";
 
 function Borrowing() {
   const [selectedStatus, setSelectedStatus] = useState<string>('pending');
 
+  const allItems = [
+    {
+      id: 1034,
+      date: 'August 19, 2023',
+      time: '9:00am',
+      status: 'Approved'
+    },
+    {
+      id: 1234,
+      date: 'August 19, 2023',
+      time: '9:00am',
+      status: 'Pending'
+    },
+    {
+      id: 1035,
+      date: 'August 19, 2023',
+      time: '9:00am',
+      status: 'Completed'
+    },
+    {
+      id: 1035,
+      date: 'August 19, 2023',
+      time: '9:00am',
+      status: 'Returning'
+    },
+    {
+      id: 1035,
+      date: 'August 19, 2023',
+      time: '9:00am',
+      status: 'Rejected'
+    },
+    {
+      id: 1235,
+      date: 'August 19, 2023',
+      time: '9:00am',
+      status: 'Approved'
+    },
+    {
+      id: 1036,
+      date: 'August 19, 2023',
+      time: '9:00am',
+      status: 'Rejected'
+    },
+  ];
+
+  const filteredItems = allItems.filter(item => item.status.toLowerCase() === selectedStatus);
+
   const handleStatusClick = (status: string) => {
     setSelectedStatus(status);
   };
+  
 
   return (
     <section className="content">
@@ -36,14 +81,37 @@ function Borrowing() {
 
         <Link
           to="/borrowing/accepted"
-          className={`borrowMiniContainer ${selectedStatus === 'accepted' ? 'selected-item' : ''}`}
-          onClick={() => handleStatusClick('accepted')}
+          className={`borrowMiniContainer ${selectedStatus === 'approved' ? 'selected-item' : ''}`}
+          onClick={() => handleStatusClick('approved')}
+        >
+          <div className='borrowIconContainer'>
+            <BiSolidLike className='icon' />
+          </div>
+          <div className="borrowStatusTitle">Accepted</div>
+        </Link>
+
+        <Link
+          to="/borrowing/rejected"
+          className={`borrowMiniContainer ${selectedStatus === 'returning' ? 'selected-item' : ''}`}
+          onClick={() => handleStatusClick('returning')}
+        >
+          <div className='borrowIconContainer'>
+            <BsHourglassSplit className='icon' />
+          </div>
+          <div className="borrowStatusTitle">Pending Return</div>
+        </Link>
+
+        <Link
+          to="/borrowing/rejected"
+          className={`borrowMiniContainer ${selectedStatus === 'completed' ? 'selected-item' : ''}`}
+          onClick={() => handleStatusClick('completed')}
         >
           <div className='borrowIconContainer'>
             <BsFillCheckCircleFill className='icon' />
           </div>
-          <div className="borrowStatusTitle">Accepted</div>
+          <div className="borrowStatusTitle">Completed</div>
         </Link>
+
 
         <Link
           to="/borrowing/rejected"
@@ -55,15 +123,31 @@ function Borrowing() {
           </div>
           <div className="borrowStatusTitle">Rejected</div>
         </Link>
-        {/* Add similar links for 'rejected' status if needed */}
+
       </div>
 
       <div className="selectedStatusContainer">
-        {selectedStatus === 'pending' && <Pending />}
-        {selectedStatus === 'accepted' && <Accepted />}
-        {selectedStatus === 'rejected' && <Rejected />}
-        {/* Add similar conditions for 'rejected' status if needed */}
+        <div className="optionContainer">
+          <div className="selectedStatusTitle">{selectedStatus.charAt(0).toUpperCase() + selectedStatus.slice(1)}</div>
+          {filteredItems.map((item) => {
+          console.log("Selected Status in Borrowing component:", selectedStatus);
+          return (
+            <TransactionItem
+              key={item.id}
+              item={item}
+              linkTo={`/borrowing/${selectedStatus}/view/${item.id}`}
+              statusIcon={`icon${selectedStatus.charAt(0).toUpperCase() + selectedStatus.slice(1)}`}
+              statusText={`item${selectedStatus.charAt(0).toUpperCase() + selectedStatus.slice(1)}StatusText`}
+             
+
+            />
+          );
+        })}
+        </div>
       </div>
+
+  
+
     </section>
   );
 }
