@@ -243,10 +243,12 @@ function BorrowPendingView() {
                     {labtech.map((labtech, index)=>(       
                       <div className='viewEachInfo'>
                         <ul className='eachmemNAME'>
-                          <li>Lab Technician: <b>{labtech.Name} </b></li>  
+                          <li>Lab Technician: 
+                            {/* <b>{labtech.Name} </b> */}
+                          </li>  
                         </ul>
                       </div>
-                      ))}
+                    ))}
                   </div>
                 </div>
                 
