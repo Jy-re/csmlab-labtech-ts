@@ -20,6 +20,8 @@ import BreakagePendingView from './components/transactions/breakageView/breakage
 
 import Dashboard from './components/dashboard/dashboard';
 
+import IncidentReport from './components/incident/IncidentReport';
+
 import Glassware from './components/inventory/glassware';
 import Miscellaneous from './components/inventory/miscellaneous';
 import Other from './components/inventory/other';
@@ -29,6 +31,7 @@ import Login from './components/login/Login';
 import NavHeaderVisibility from './components/login/loginisolate';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import useLocation
+
 
 
 function App() {
@@ -62,9 +65,9 @@ function App() {
           
           <Route path ="/returning/pending/view/:id" element={<ReturnPendingView/> } />
           <Route path ="/returning/returned/view/:id" element={<ReturnReturnedView/> } />
+          
+          <Route path="/incident" element={<IncidentReport/>}/>
 
-          <Route path ="/breakage/list/view/:id" element={<BreakageListView/> } />
-          <Route path ="/breakage/pending/view/:id" element={<BreakagePendingView/> } />
           <Route path="/inventory" element={<Glassware />} />
           <Route path="/glassware" element={<Glassware />} />
           <Route path="/miscellaneous" element={<Miscellaneous />} />
