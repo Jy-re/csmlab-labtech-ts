@@ -1026,9 +1026,9 @@ div.selected-item{
   width: 80px;
 }
 
-.optionContainer{
+/* .optionContainer{
   overflow-y: scroll;
-}
+} */
 
 /* SELECTED VIEW BELOW */
 .selectedStatusContainer{

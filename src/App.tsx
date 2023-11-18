@@ -60,17 +60,20 @@ function App() {
           <Route path="/returning/pending" element={<Returning />} />
           <Route path="/returning/returned" element={<Returning />} />
           <Route path="/returning/pending" element={<Returning/> } />
-   
+
+          {/* Views ni jofil */}
+          <Route path="/borrowing/pending/view/:id" element={< BorrowPendingView />}/>
+          <Route path="/borrowing/approved/view/:id" element={< BorrowAcceptedView />}/>
           
           {/* manage request views */}
           {/* <Route path ="/borrowing/pending/view/:id" element={< BorrowPendingView/>} />
           <Route path ="/borrowing/approved/view/:id" element={<BorrowAcceptedView/>} />
-          <Route path ="/borrowing/rejected/view/:id" element={<BorrowRejectedView/>} /> */}
+          <Route path ="/borrowing/rejected/view/:id" element={<BorrowRejectedView/>} />
           
           <Route path="/borrowing/:status/view/:id" element={<BorrowTransactionView/>} />
 
           <Route path ="/returning/pending/view/:id" element={<ReturnPendingView/> } />
-          <Route path ="/returning/returned/view/:id" element={<ReturnReturnedView/> } />
+          <Route path ="/returning/returned/view/:id" element={<ReturnReturnedView/> } /> */}
           
           <Route path="/incident/pending" element={<IncidentReport/>} />
           <Route path="/incident/resolved" element={<IncidentReport/>} />

@@ -84,6 +84,7 @@ function BorrowAcceptedView() {
   
 
   return (
+    
     <section className="content">
       <div className="titleHeader">
          <div className='arrowTitleView'>
@@ -102,7 +103,7 @@ function BorrowAcceptedView() {
               
           <div className='transaction-header'>
               <div className='transaction-header-status'>
-              Status: <span> {item.status}</span>
+              Status: <span className='bold-header-status'> {item.status}</span>
               </div>
 
               <div className='transaction-view-note'>
@@ -195,7 +196,7 @@ function BorrowAcceptedView() {
              
 
               <div className='darabyue'>
-                  <Link to = '/borrowing/rejected' className='viewButtonReject'>
+                  <Link to = '/borrowing' className='viewButtonReject'>
                       Abort
                   </Link>
                   <Link to= "/borrowing/accepted" className='viewButtonAccept'>
