@@ -3,8 +3,6 @@ import './App.css';
 
 /* manage requests*/
 import Borrowing from './components/requests/borrowing/borrow';
-import Returning from './components/requests/returning/return';
-
 
 /*tap to view*/
 // import BorrowPendingView from './components/transactions/borrowingView/borrowPendingView';
@@ -13,9 +11,8 @@ import Returning from './components/requests/returning/return';
 import BorrowTransactionView from './components/transactions/borrowingView/(trial)BorrowTransactionView';
 
 
-
-import ReturnPendingView from './components/transactions/returningView/returnPendingView';
-import ReturnReturnedView from './components/transactions/returningView/returnReturnedView';
+import ReturnPendingView from './components/transactions/borrowingView/returnPendingView';
+import ReturnReturnedView from './components/transactions/borrowingView/returnReturnedView';
 
 
 
@@ -55,15 +52,17 @@ function App() {
          {/* manage request */}
           <Route path="/borrowing/pending" element={<Borrowing />} />
           <Route path="/borrowing/accepted" element={<Borrowing />} />
+          <Route path="/borrowing/returning" element={<Borrowing />} />
+          <Route path="/borrowing/completed" element={<Borrowing />} />
           <Route path="/borrowing/rejected" element={<Borrowing />} />
 
-          <Route path="/returning/pending" element={<Returning />} />
-          <Route path="/returning/returned" element={<Returning />} />
-          <Route path="/returning/pending" element={<Returning/> } />
-
           {/* Views ni jofil */}
-          <Route path="/borrowing/pending/view/:id" element={< BorrowPendingView />}/>
-          <Route path="/borrowing/approved/view/:id" element={< BorrowAcceptedView />}/>
+          <Route path="/borrowing/pending/view/:id" element={< BorrowPendingView />} />
+          <Route path="/borrowing/approved/view/:id" element={< BorrowAcceptedView />} />
+          <Route path="/borrowing/returning/view/:id" element={< ReturnPendingView/>} />
+          <Route path="/borrowing/completed/view/:id" element={< ReturnReturnedView />} />
+          <Route path="/borrowing/rejected/view/:id" element={< BorrowRejectedView />}/>
+          
           
           {/* manage request views */}
           {/* <Route path ="/borrowing/pending/view/:id" element={< BorrowPendingView/>} />

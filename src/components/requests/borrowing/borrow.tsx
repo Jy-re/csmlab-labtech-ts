@@ -91,7 +91,7 @@ function Borrowing() {
         </Link>
 
         <Link
-          to="/borrowing/rejected"
+          to="/borrowing/returning"
           className={`borrowMiniContainer ${selectedStatus === 'returning' ? 'selected-item' : ''}`}
           onClick={() => handleStatusClick('returning')}
         >
@@ -102,7 +102,7 @@ function Borrowing() {
         </Link>
 
         <Link
-          to="/borrowing/rejected"
+          to="/borrowing/completed"
           className={`borrowMiniContainer ${selectedStatus === 'completed' ? 'selected-item' : ''}`}
           onClick={() => handleStatusClick('completed')}
         >
