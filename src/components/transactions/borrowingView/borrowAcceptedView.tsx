@@ -204,8 +204,6 @@ function BorrowAcceptedView() {
                     </div>
                     <div className='eachItemDetails'>
                       {borrowedItems.name}
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;
-                      {borrowedItems.quantity}
                     </div>
                   </div>
                 ))}

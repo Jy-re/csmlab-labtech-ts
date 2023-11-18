@@ -126,7 +126,7 @@ function ReturnPendingView() {
               </div>
 
               <div className='transaction-view-note'>
-                Note: Please wait for the students to come and provide the requested items.
+                Note: Review the slip and the returned equipment.
               </div>
             </div>
 
@@ -208,8 +208,6 @@ function ReturnPendingView() {
                     </div>
                     <div className='eachItemDetails'>
                       {borrowedItems.name}
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;
-                      {borrowedItems.quantity}
                     </div>
                   </div>
                 ))}
