@@ -5,15 +5,42 @@ import { Link } from 'react-router-dom';
 import {RxDotFilled} from 'react-icons/rx';
 
 import {GoArrowLeft} from 'react-icons/go'
+import BrokenEquipment from './PopupIncident';
+
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 
 function ReturnPendingView() {
-  const [selectedStatus, setSelectedStatus] = useState('');
-
+  const [selectedItems, setSelectedItems] = useState<any[]>([]); // Change 'any[]' to a more specific type if possible
 
 //   const handleStatusClick = (status) => {
 //     setSelectedStatus(status);
 //   };
+const [open, setOpen] = React.useState(false);
+const handleOpen = () => {
+  // Assuming you're updating 'selectedItems' when the Incident Report button is clicked
+  const selected = pendingItems[0].items; // Replace this with your logic to get selected items
+  setSelectedItems(selected);
+  setOpen(true);
+};
 
+
+
+const handleClose = () => setOpen(false);
+
+const style = {
+  position: 'absolute' as 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 650,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
   const pendingItems = [
     {
@@ -256,9 +283,9 @@ function ReturnPendingView() {
             {/* buttons */}
             <div className="threeButtonsViewTrans">
               <div className="firstRowButtons">
-                <Link to = '/borrowing' className='viewButtonIncidentReport'>
+                <button onClick={handleOpen} className='viewButtonIncidentReport'>
                   Incident Report
-                </Link>
+                </button>
                 <Link to= "/borrowing/completed" className='viewButtonReturn'>
                   Marked as Returned
                 </Link>
@@ -276,7 +303,37 @@ function ReturnPendingView() {
           </div>
         </div>
       ))}
-      
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <h2 className='titleModal'>Select Broken Item</h2>
+          <div>
+            <p className='viewTitleLabel'>Selected Items</p>
+            <div className='viewItemsSelected'>
+              {selectedItems.map((borrowedItems, index) => (
+                <div className='viewEachInfo' key={index}>
+                  <div><input type='checkbox' className='check'></input></div>
+                  <div className='eachIndex'>{index + 1}</div>
+                  <div className='eachItemDetails'>{borrowedItems.name}</div>
+                </div>
+              ))}
+
+            </div>
+            <div className='buttonContainerModal'>
+              <div className='cancelContain'><button onClick={handleClose} className='viewButtonCancel'>Cancel</button></div>
+              <Link to="/incident/pending"><div><button className='viewButtonReturn'>Create Incident Report</button></div></Link>
+              
+            </div>
+
+          </div>
+        </Box>
+      </Modal>
+
+
     </section>
 
   );
