@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 import {GoArrowLeft} from 'react-icons/go'
-function IncidentPendingView() {
+function IncidentResolvedView() {
   const [selectedStatus, setSelectedStatus] = useState('');
 
 
@@ -19,14 +19,14 @@ function IncidentPendingView() {
       id: 1034,
       date: 'August 19, 2023',
       time: '9:00am',
-      status: 'Pending',
+      status: 'Resolved',
       items: 
         [
-             {name: 'Pipettes'},
-             {name: 'Petri Dishes'},
-             {name: 'Graduated Cylinder'},
-             {name: 'Volumetric Flask'},
-             {name: 'Petri Dishes'},
+             {name: 'Pipettes', condition: 'Replaced'},
+             {name: 'Petri Dishes', condition: 'Reimbrused'},
+             {name: 'Graduated Cylinder', condition: 'Replaced'},
+             {name: 'Volumetric Flask', condition: 'Reimbrused'},
+             {name: 'Petri Dishes', condition: 'Replaced'},
            
         ]
 
@@ -101,7 +101,7 @@ function IncidentPendingView() {
              <GoArrowLeft className='iconLeftArrow'/>
             </Link>
           <div className='titleName'> 
-          Viewing Incident 
+          Viewing Resolved Incident
           </div>
         </div>
       </div>
@@ -111,9 +111,10 @@ function IncidentPendingView() {
         <div key={item.id} className="transbody">
           <div className="receiptContainer">
             <div className='transaction-header'>
-              <div className='transaction-header-status-pending'>
+              <div className='transaction-header-status'>
                 Status: <span>{item.status}</span>
               </div>
+
             </div>
 
             {/* inside content sa white container */}
@@ -184,12 +185,8 @@ function IncidentPendingView() {
                               <div className='eachItemDetails'>
                                   {borrowedItems.name}
                               </div>
-                              <div className="status-dropdownContainer">
-                                <select className='status-dropdown' placeholder='Select Status'>
-                                    <option value="" disabled selected>Select Status</option>
-                                    <option>Replaced</option>
-                                    <option>Reimbursed</option>
-                                </select>
+                              <div className="statusResolved">
+                                <p className='status-condition'>{borrowedItems.condition}</p>
                               </div>
                           </div>
                       ))}
@@ -215,8 +212,8 @@ function IncidentPendingView() {
                     <Link to = '/incident/pending' className='viewButtonReject'>
                         Reject
                     </Link>
-                    <Link to= "/incident/resolved/view/:id" className='viewButtonAcceptPending'>
-                        Marked as Resolved
+                    <Link to= "/incident/pending" className='viewButtonAcceptPending'>
+                        Done View
                     </Link>
 
               </div>
@@ -232,4 +229,4 @@ function IncidentPendingView() {
   );
 }
 
-export default IncidentPendingView;
+export default IncidentResolvedView;

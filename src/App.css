@@ -244,11 +244,12 @@ a{
 
 
 
-.transaction-header-status{
+.transaction-header-status {
 
   height: 34px;
   font-size: 20px;
   background: #D9FFD8;
+  align-items: center;
   display: flex;
   justify-content: flex-end;
   color:  #00360C;
@@ -505,6 +506,12 @@ total quantity */
   font-weight: 700;
 }
 
+.status-dropdown{
+  width: 147px;
+  border: solid 1px black;
+  height: 25px;
+}
+
 
 /* date and time */
 
@@ -575,6 +582,44 @@ total quantity */
   
 } 
 
+.viewButtonAcceptPending{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #C8ECB8;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 10px;
+  color: #134601;
+  text-align: center;
+  font-size: 20px;
+  width: 250px;
+  height: 40px;
+  font-weight: 700;
+  
+} 
+
+.statusResolved{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #C8ECB8;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 10px;
+  color: #134601;
+  text-align: center;
+  font-size: 20px;
+  width: 250px;
+  height: 40px;
+  font-weight: 700;
+  
+} 
+
+.status-condition{
+  font-size: 15px;
+
+}
 /* breakage view */
 
 .breakageDetails{

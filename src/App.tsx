@@ -35,6 +35,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Im
 import BorrowAcceptedView from './components/transactions/borrowingView/borrowAcceptedView';
 import BorrowPendingView from './components/transactions/borrowingView/borrowPendingView';
 import BorrowRejectedView from './components/transactions/borrowingView/borrowRejectedView';
+import IncidentPendingView from './components/incident/incidentViews/IncidentViewPending';
+import IncidentResolvedView from './components/incident/incidentViews/IncidentViewResolved';
 
 
 
@@ -74,6 +76,8 @@ function App() {
           
           <Route path="/incident/pending" element={<IncidentReport/>} />
           <Route path="/incident/resolved" element={<IncidentReport/>} />
+          <Route path ="/incident/pending/view/:id" element={<IncidentPendingView/> } />
+          <Route path ="/incident/resolved/view/:id" element={<IncidentResolvedView/> } />
 
           <Route path="/inventory" element={<Glassware />} />
           <Route path="/glassware" element={<Glassware />} />
