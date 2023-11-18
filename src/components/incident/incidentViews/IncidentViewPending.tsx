@@ -213,7 +213,7 @@ function IncidentPendingView() {
             </div> 
               <div className='darabyue'>
                     <Link to = '/incident/pending' className='viewButtonReject'>
-                        Reject
+                        Cancel
                     </Link>
                     <Link to= "/incident/resolved/view/:id" className='viewButtonAcceptPending'>
                         Marked as Resolved
