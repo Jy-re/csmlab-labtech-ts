@@ -85,7 +85,7 @@ function IncidentReport() {
                 <TransactionItem
                     key={item.id}
                     item={item}
-                    linkTo={`/borrowing/${selectedStatus}/view/${item.id}`}
+                    linkTo={`/incident/${selectedStatus}/view/${item.id}`}
                     statusIcon={`icon${selectedStatus.charAt(0).toUpperCase() + selectedStatus.slice(1)}`}
                     statusText={`item${selectedStatus.charAt(0).toUpperCase() + selectedStatus.slice(1)}StatusText`}
                 />
