@@ -246,13 +246,18 @@ a{
 
 .transaction-header-status{
 
-  height: 34px;
-  font-size: 20px;
   background: #D9FFD8;
   display: flex;
-  justify-content: flex-end;
   color:  #00360C;
   width: auto;
+
+  padding: 5px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+
+  border-radius: 10px;
   
 }
 
@@ -279,7 +284,6 @@ a{
   align-self: stretch;
 
   border-radius: 10px;
-  background: #FEFFCD;
 
 
 }
@@ -346,7 +350,7 @@ a{
   background-color: white;
   border-radius: 15px;
 
-  width: 560px;
+  width: auto;
  
 }
 
@@ -644,7 +648,9 @@ total quantity */
 .receiptContainer {
   display: flex;
   flex-direction: column;
-  width: auto;
+  width: 560px;
+
+
 }
 
 .transaction-header {

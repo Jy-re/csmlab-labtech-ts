@@ -51,8 +51,8 @@ function BorrowAcceptedView() {
      {
         idNumber: 201854265,
         name: 'Sofia Dara Alilin',
-        Dept: 'BSCHEMISTRY'
-        
+        Dept: 'BSCHEMISTRY',
+        Section: 'CHEM3H2'
      }   
     ]
     const membersDetails =[
@@ -73,6 +73,19 @@ function BorrowAcceptedView() {
      }   
     ]
 
+    const instructor = [
+      {
+        idNumber: 2055060541,
+        Name: 'Ms. Jerilyn Yare',
+      }
+    ]
+
+    const labtech = [
+      {
+        Name: "Prince Kurt Laurence",
+      }
+    ]
+
     let totalQuantity = 0;
     pendingItems.forEach((item) => {
       item.items.forEach((borrowedItem) => {
@@ -84,49 +97,49 @@ function BorrowAcceptedView() {
   
 
   return (
-    
     <section className="content">
+      {/* Title ni siya */}
       <div className="titleHeader">
-         <div className='arrowTitleView'>
+        <div className="arrowTitleView">
           <Link to ='/borrowing/pending'>
-             <GoArrowLeft className='iconLeftArrow'/>
-            </Link>
-          <div className='titleName'> 
-          Viewing Transaction 
+            <GoArrowLeft className='iconLeftArrow'/>
+          </Link>
+          <div className="titleName">
+            Viewing Transaction
           </div>
         </div>
       </div>
 
+      {/* Body */}
+      {pendingItems.map((item) => (
+        <div className="transbody">
+          <div className="receiptContainer">
 
-        {pendingItems.map((item) => (
-          <div key={item.id}>
-              
-          <div className='transaction-header'>
+            {/* Status Head */}
+            <div className='transaction-header'>
               <div className='transaction-header-status'>
-              Status: <span className='bold-header-status'> {item.status}</span>
+                Status: <span>{item.status}</span>
               </div>
 
               <div className='transaction-view-note'>
-                  Note: Please wait for the students to come and provide the requested items 
+                Note: Please wait for the students to come and provide the requested items.
               </div>
+            </div>
 
-          </div>
+            {/* White Container */}
+            <div className="transactionViewContainer">
 
-
-          
-          <div className='transactionViewContainer'>
-              {/* inside content sa white container */}
-
-
-              <div className='transactionView-title'>
+              {/* Trans ID */}
+              <div className="transactionView-title">
                 Transaction ID #<span className='bold-item-id'>{item.id}</span>
               </div>
 
-              {/* --student items */}
-              {studentDetails.map((student) => (                   
+              {/* Student Details */}
+              {studentDetails.map((student) => (
+                <div className="firstRow">
                   <div className='viewStudentInfo'>
                     <div className='iconProfileContainer'> 
-                        <CgProfile className='iconProfile'/>
+                      <CgProfile className='iconProfile'/>
                     </div>
                     <div className='student-details'>
                       <div className='student-Name'>
@@ -137,45 +150,66 @@ function BorrowAcceptedView() {
                       </div>
                     </div>
                   </div>
-                  ))}   
-
-              {/* --members view       */}
-              <div className='viewTitleLabel'>Members </div>
-                      
-                  <div className='viewMembersInfo'>
-                  {membersDetails.map((member, index)=>(       
-                      <div className='viewEachInfo'>
-                          <div className='eachIndex'>
-                            {index + 1}
-                          </div>
-                          <div className='eachmemID'>
-                      
-                          {member.idNumber}
-                          </div>
-                          <div className='eachmemNAME'>
-                              {member.Name}
-                              
-                          </div>
-                      </div>
+                    <div className="sectionContainer">
+                      Section: <b>{student.Section}</b>
+                    </div>
+                </div>
               ))}
+
+              {/* Second Row*/}
+              <div className="memInsCont">
+
+                {/* Members */}
+                <div className="members">
+                  <div className="viewTitleLabel">Members</div>
+                  <div className='viewMembersInfo'>
+                    {membersDetails.map((member, index)=>(       
+                      <div className='viewEachInfo'>
+                        <div className='eachIndex'>
+                          {index + 1}
+                        </div>
+                        <div className='eachmemID'>
+                          {member.idNumber}
+                        </div>
+                        <div className='eachmemNAME'>
+                          {member.Name}       
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Instructor */}
+                <div className="instructor">
+                  <div className='viewTitleLabel'>Instructor </div>
+                  <div className='viewMembersInfo'>
+                    {instructor.map((instructor, index)=>(       
+                      <div className='viewEachInfo'>
+                        <div className='eachmemNAME'>
+                          {instructor.Name}       
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
 
-                {/* --selected view */}
-                <div className='viewTitleLabel'> Selected Items </div>
-                <div className='viewItemsSelected'>
-                    {item.items.map((borrowedItems, index) => (
-                        <div className='viewEachInfo' key={index}>
-                            <div className='eachIndex'>
-                                {index + 1}
-                            </div>
-                            <div className='eachItemDetails'>
-                                {borrowedItems.name}
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;
-                                {borrowedItems.quantity}
-                            </div>
-                        </div>
-                    ))}
-                </div>
+              {/* Third Row = Items Selected */}
+              <div className='viewTitleLabel'> Selected Items </div>
+              <div className='viewItemsSelected'>
+                {item.items.map((borrowedItems, index) => (
+                  <div className='viewEachInfo' key={index}>
+                    <div className='eachIndex'>
+                      {index + 1}
+                    </div>
+                    <div className='eachItemDetails'>
+                      {borrowedItems.name}
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;
+                      {borrowedItems.quantity}
+                    </div>
+                  </div>
+                ))}
+              </div>
 
               <div className='totalQuantityLabel'>
                 <span className='totalText'>Quantity Borrowed:</span>
@@ -183,41 +217,56 @@ function BorrowAcceptedView() {
                 {totalQuantity}
               </div>
 
+              {/* Last Row Approved by View */}
+              <div className="approvedCont">
+                <div className='viewTitleLabel'>Approved by: </div>
+                <div className='viewMembersInfo'>
+                  {instructor.map((instructor, index)=>(       
+                    <div className='viewEachInfo'>
+                      <ul className='eachmemNAME'>
+                        <li>Instructor: <b>{instructor.Name}</b></li>       
+                      </ul>
+                    </div>
+                  ))}
+                  {labtech.map((labtech, index)=>(       
+                    <div className='viewEachInfo'>
+                      <ul className='eachmemNAME'>
+                        <li>Lab Technician: <b>{labtech.Name} </b>
+                        </li>  
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+
+              {/* Time and Date Created */}
               <div className='viewDateTime'>
-                  <div className='viewDate'>
-                      {item.date}
-                  </div>
-                  <div className='viewTime'>
-                      {item.time}
-                  </div>
-
+                <div className='viewDate'>
+                  {item.date}
+                </div>
+                <div className='viewTime'>
+                  {item.time}
+                </div>
               </div>
+            </div> 
 
-             
-
-              <div className='darabyue'>
-                  <Link to = '/borrowing' className='viewButtonReject'>
-                      Abort
-                  </Link>
-                  <Link to= "/borrowing/accepted" className='viewButtonAccept'>
-                      Done View
-                  </Link>
-
-              </div>
-
-  
+            {/* buttons */}
+            <div className="darabyue">
+              <Link to = '/borrowing' className='viewButtonReject'>
+                Abort
+              </Link>
+              <Link to= "/borrowing/accepted" className='viewButtonAccept'>
+                Done View
+              </Link>
+            </div>
 
 
-          </div> 
-
-         </div>
-
-            
-            
-            
-
-        ))}
+          </div>
+        </div>
+      ))}
     </section>
+
   );
 }
 
