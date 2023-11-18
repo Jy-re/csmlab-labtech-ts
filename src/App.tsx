@@ -37,6 +37,7 @@ import BorrowPendingView from './components/transactions/borrowingView/borrowPen
 import BorrowRejectedView from './components/transactions/borrowingView/borrowRejectedView';
 import IncidentPendingView from './components/incident/incidentViews/IncidentViewPending';
 import IncidentResolvedView from './components/incident/incidentViews/IncidentViewResolved';
+import Reports from './components/reports/Reports';
 
 
 
@@ -79,6 +80,7 @@ function App() {
           <Route path ="/incident/pending/view/:id" element={<IncidentPendingView/> } />
           <Route path ="/incident/resolved/view/:id" element={<IncidentResolvedView/> } />
 
+          <Route path="/reports" element={<Reports />} />
           <Route path="/inventory" element={<Glassware />} />
           <Route path="/glassware" element={<Glassware />} />
           <Route path="/miscellaneous" element={<Miscellaneous />} />
