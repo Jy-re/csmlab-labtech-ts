@@ -215,7 +215,7 @@ function IncidentPendingView() {
                     <Link to = '/incident/pending' className='viewButtonReject'>
                         Cancel
                     </Link>
-                    <Link to= "/incident/resolved/view/:id" className='viewButtonAcceptPending'>
+                    <Link to={`/incident/resolved/view/${item.id}`} className='viewButtonAcceptPending'>
                         Marked as Resolved
                     </Link>
 

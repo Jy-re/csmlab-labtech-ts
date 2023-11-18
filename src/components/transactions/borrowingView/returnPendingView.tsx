@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import {RxDotFilled} from 'react-icons/rx';
 
 import {GoArrowLeft} from 'react-icons/go'
-import BrokenEquipment from './PopupIncident';
+
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -301,37 +301,40 @@ const style = {
 
 
           </div>
-        </div>
-      ))}
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <h2 className='titleModal'>Select Broken Item</h2>
           <div>
-            <p className='viewTitleLabel'>Selected Items</p>
-            <div className='viewItemsSelected'>
-              {selectedItems.map((borrowedItems, index) => (
-                <div className='viewEachInfo' key={index}>
-                  <div><input type='checkbox' className='check'></input></div>
-                  <div className='eachIndex'>{index + 1}</div>
-                  <div className='eachItemDetails'>{borrowedItems.name}</div>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <h2 className='titleModal'>Select Broken Item</h2>
+              <div>
+                <p className='viewTitleLabel'>Selected Items</p>
+                <div className='viewItemsSelected'>
+                  {selectedItems.map((borrowedItems, index) => (
+                    <div className='viewEachInfo' key={index}>
+                      <div><input type='checkbox' className='check'></input></div>
+                      <div className='eachIndex'>{index + 1}</div>
+                      <div className='eachItemDetails'>{borrowedItems.name}</div>
+                    </div>
+                  ))}
+
                 </div>
-              ))}
+                <div className='buttonContainerModal'>
+                  <div className='cancelContain'><button onClick={handleClose} className='viewButtonCancel'>Cancel</button></div>
+                  <Link to={`/incident/pending/view/${item.id}`}><div><button className='viewButtonReturn'>Create Incident Report</button></div></Link>
+                  
+                </div>
 
-            </div>
-            <div className='buttonContainerModal'>
-              <div className='cancelContain'><button onClick={handleClose} className='viewButtonCancel'>Cancel</button></div>
-              <Link to="/incident/pending"><div><button className='viewButtonReturn'>Create Incident Report</button></div></Link>
-              
-            </div>
+              </div>
+            </Box>
+          </Modal>
+        </div>
+        </div>
 
-          </div>
-        </Box>
-      </Modal>
+      ))}
 
 
     </section>
