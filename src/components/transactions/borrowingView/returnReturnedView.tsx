@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-
 import {CgProfile} from 'react-icons/cg'
 import { Link } from 'react-router-dom';
-
-
 import {GoArrowLeft} from 'react-icons/go'
 
 
-function BorrowAcceptedView() {
+
+
+function ReturnReturnedView() {
   const [selectedStatus, setSelectedStatus] = useState('');
 
 
@@ -21,7 +20,7 @@ function BorrowAcceptedView() {
       id: 1034,
       date: 'August 19, 2023',
       time: '9:00am',
-      status: 'Approved',
+      status: 'Returned',
       items: 
         [
              {name: 'Pipettes', quantity: 1},
@@ -121,9 +120,6 @@ function BorrowAcceptedView() {
                 Status: <span>{item.status}</span>
               </div>
 
-              <div className='transaction-view-note'>
-                Note: Please wait for the students to come and provide the requested items.
-              </div>
             </div>
 
             {/* White Container */}
@@ -251,9 +247,6 @@ function BorrowAcceptedView() {
 
             {/* buttons */}
             <div className="darabyue">
-              <Link to = '/borrowing' className='viewButtonReject'>
-                Abort
-              </Link>
               <Link to= "/borrowing/accepted" className='viewButtonAccept'>
                 Done View
               </Link>
@@ -265,8 +258,7 @@ function BorrowAcceptedView() {
       ))}
       
     </section>
-
   );
 }
 
-export default BorrowAcceptedView;
+export default ReturnReturnedView;

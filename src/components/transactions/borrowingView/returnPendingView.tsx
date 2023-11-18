@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 import {CgProfile} from 'react-icons/cg'
 import { Link } from 'react-router-dom';
-
+import {RxDotFilled} from 'react-icons/rx';
 
 import {GoArrowLeft} from 'react-icons/go'
 
-
-function BorrowAcceptedView() {
+function ReturnPendingView() {
   const [selectedStatus, setSelectedStatus] = useState('');
 
 
@@ -21,26 +20,13 @@ function BorrowAcceptedView() {
       id: 1034,
       date: 'August 19, 2023',
       time: '9:00am',
-      status: 'Approved',
+      status: 'Returning',
       items: 
         [
-             {name: 'Pipettes', quantity: 1},
-             {name: 'Petri Dishes', quantity: 3},
-             {name: 'Graduated Cylinder', quantity: 2},
-             {name: 'Volumetric Flask', quantity: 2},
-             {name: 'Petri Dishes', quantity: 3},
-             {name: 'Graduated Cylinder', quantity: 2},
-             {name: 'Volumetric Flask', quantity: 2},
-             {name: 'Petri Dishes', quantity: 3},
-             {name: 'Graduated Cylinder', quantity: 2},
-             {name: 'Volumetric Flask', quantity: 2},
-             {name: 'Volumetric Flask', quantity: 2},
-             {name: 'Petri Dishes', quantity: 3},
-             {name: 'Graduated Cylinder', quantity: 2},
-             {name: 'Volumetric Flask', quantity: 2},
-             {name: 'Volumetric Flask', quantity: 2},
-             {name: 'Petri Dishes', quantity: 3},
-             {name: 'Graduated Cylinder', quantity: 2},
+             {name: 'Pipettes', quantity: 1, breakage: 1},
+             {name: 'Petri Dishes', quantity: 6,breakage: 4},
+             {name: 'Graduated Cylinder', quantity: 2, breakage: 1},
+           
            
         ]
 
@@ -53,6 +39,7 @@ function BorrowAcceptedView() {
         name: 'Sofia Dara Alilin',
         Dept: 'BSCHEMISTRY',
         Section: 'CHEM3H2'
+        
      }   
     ]
     const membersDetails =[
@@ -95,6 +82,23 @@ function BorrowAcceptedView() {
    
     
   
+//   const acceptedItems = [
+//     {
+//       id: 1034,
+//       date: 'August 19, 2023',
+//       time: '9:00am',
+//       status: 'Approved'
+//     },
+//     {
+//       id: 1234,
+//       date: 'August 19, 2023',
+//       time: '9:00am',
+//       status: 'Approved'
+//     }
+    
+    
+   
+//   ]
 
   return (
     <section className="content">
@@ -117,12 +121,12 @@ function BorrowAcceptedView() {
 
             {/* Status Head */}
             <div className='transaction-header'>
-              <div className='transaction-header-status'>
+              <div className='transaction-header-status-pending'>
                 Status: <span>{item.status}</span>
               </div>
 
               <div className='transaction-view-note'>
-                Note: Please wait for the students to come and provide the requested items.
+                Note: Review the slip and the returned equipment.
               </div>
             </div>
 
@@ -250,13 +254,22 @@ function BorrowAcceptedView() {
             </div> 
 
             {/* buttons */}
-            <div className="darabyue">
-              <Link to = '/borrowing' className='viewButtonReject'>
-                Abort
-              </Link>
-              <Link to= "/borrowing/accepted" className='viewButtonAccept'>
-                Done View
-              </Link>
+            <div className="threeButtonsViewTrans">
+              <div className="firstRowButtons">
+                <Link to = '/borrowing' className='viewButtonIncidentReport'>
+                  Incident Report
+                </Link>
+                <Link to= "/borrowing/completed" className='viewButtonReturn'>
+                  Marked as Returned
+                </Link>
+              </div>
+              <div className="secondRowButtons">
+                <Link to = '/borrowing' className='viewButtonCancel'>
+                  Cancel
+                </Link>
+              </div>
+              
+             
             </div>
 
 
@@ -269,4 +282,4 @@ function BorrowAcceptedView() {
   );
 }
 
-export default BorrowAcceptedView;
+export default ReturnPendingView;
