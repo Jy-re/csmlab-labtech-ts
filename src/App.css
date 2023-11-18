@@ -1587,3 +1587,99 @@ td:first-child, th:first-child {
   border: none;
   background-color: transparent;
 }
+
+/* Reports Styles */
+
+.printReportContainer{
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  width: 95%;
+  align-items: center;
+}
+
+.printIcon{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.printReportLabels{
+  width: 80%;
+}
+
+.genrepTitle{
+  display: flex;
+  align-items: center;
+  line-height: 0;
+  margin-top: 20px;
+}
+
+.genrepNote{
+  line-height: 0;
+  margin-bottom: 30px;
+}
+
+
+.genRep{
+  width: 180px;
+  height: 37px;
+  border: none;
+  background-color: #FFDC90;
+  color: #B68214;
+  font-weight: bolder;
+  border-radius: 10px;
+}
+
+
+.inventorySummaryReports{
+  background-color: white;
+  margin-top: 25px;
+  margin-right: 25px;
+  width: 482px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.totalEquip{
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid 1px gray;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.totalNumberEquip{
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.transactionSummaryReports{
+  background-color: white;
+  border-radius: 10px;
+  width: 482px;
+  height: 300px;
+  margin-top: 25px;
+  margin-right: 25px;
+}
+
+.summariess{
+  display: flex;
+  flex-direction: row;
+}
+
+.titleInventorybullet{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;
+}
+
+.inventorySummaryTitle{
+  margin-left: 10px;
+  line-height: 0;
+}
+
+.monthlySummary{
+  margin-left: 20px;
+}
