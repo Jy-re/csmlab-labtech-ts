@@ -7,7 +7,7 @@ import TransactionItem from '../TapViewTransaction';
 import { BiSolidLike } from "react-icons/bi";
 
 function Borrowing() {
-  const [selectedStatus, setSelectedStatus] = useState<string>('pending');
+  const [selectedStatus, setSelectedStatus] = useState<string>('Pending');
 
   const allItems = [
     {
