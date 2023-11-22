@@ -7,7 +7,7 @@ import TransactionItem from '../TapViewTransaction';
 import { BiSolidLike } from "react-icons/bi";
 
 function Borrowing() {
-  const [selectedStatus, setSelectedStatus] = useState<string>('pending');
+  const [selectedStatus, setSelectedStatus] = useState<string>('Pending');
 
   const allItems = [
     {
@@ -54,7 +54,7 @@ function Borrowing() {
     },
   ];
 
-  const filteredItems = allItems.filter(item => item.status.toLowerCase() === selectedStatus);
+  const filteredItems = allItems.filter(item => item.status === selectedStatus);
 
   const handleStatusClick = (status: string) => {
     setSelectedStatus(status);
@@ -70,8 +70,8 @@ function Borrowing() {
       <div className='borrowStatusContainer'>
         <Link
           to="/borrowing/pending"
-          className={`borrowMiniContainer ${selectedStatus === 'pending' ? 'selected-item' : ''}`}
-          onClick={() => handleStatusClick('pending')}
+          className={`borrowMiniContainer ${selectedStatus === 'Pending' ? 'selected-item' : ''}`}
+          onClick={() => handleStatusClick('Pending')}
         >
           <div className='borrowIconContainer'>
             <BsHourglassSplit className='icon' />
@@ -81,8 +81,8 @@ function Borrowing() {
 
         <Link
           to="/borrowing/accepted"
-          className={`borrowMiniContainer ${selectedStatus === 'approved' ? 'selected-item' : ''}`}
-          onClick={() => handleStatusClick('approved')}
+          className={`borrowMiniContainer ${selectedStatus === 'Approved' ? 'selected-item' : ''}`}
+          onClick={() => handleStatusClick('Approved')}
         >
           <div className='borrowIconContainer'>
             <BiSolidLike className='icon' />
@@ -92,8 +92,8 @@ function Borrowing() {
 
         <Link
           to="/borrowing/returning"
-          className={`borrowMiniContainer ${selectedStatus === 'returning' ? 'selected-item' : ''}`}
-          onClick={() => handleStatusClick('returning')}
+          className={`borrowMiniContainer ${selectedStatus === 'Returning' ? 'selected-item' : ''}`}
+          onClick={() => handleStatusClick('Returning')}
         >
           <div className='borrowIconContainer'>
             <BsHourglassSplit className='icon' />
@@ -103,8 +103,8 @@ function Borrowing() {
 
         <Link
           to="/borrowing/completed"
-          className={`borrowMiniContainer ${selectedStatus === 'completed' ? 'selected-item' : ''}`}
-          onClick={() => handleStatusClick('completed')}
+          className={`borrowMiniContainer ${selectedStatus === 'Completed' ? 'selected-item' : ''}`}
+          onClick={() => handleStatusClick('Completed')}
         >
           <div className='borrowIconContainer'>
             <BsFillCheckCircleFill className='icon' />
@@ -115,8 +115,8 @@ function Borrowing() {
 
         <Link
           to="/borrowing/rejected"
-          className={`borrowMiniContainer ${selectedStatus === 'rejected' ? 'selected-item' : ''}`}
-          onClick={() => handleStatusClick('rejected')}
+          className={`borrowMiniContainer ${selectedStatus === 'Rejected' ? 'selected-item' : ''}`}
+          onClick={() => handleStatusClick('Rejected')}
         >
           <div className='borrowIconContainer'>
             <MdCancel className='icon' />
